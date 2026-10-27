@@ -1,0 +1,82 @@
+{
+  "$schema": "https://deessejs.com/schemas/deesse-block.schema.json",
+  "formatVersion": 1,
+  "name": "upstash-redis",
+  "version": "0.1.0",
+  "description": "Adds an Upstash Redis-backed cache package.",
+  "provides": [
+    {
+      "capability": "redis",
+      "provider": "upstash",
+      "package": "cache"
+    },
+    {
+      "capability": "cache",
+      "provider": "upstash",
+      "package": "cache"
+    }
+  ],
+  "requires": [],
+  "install": {
+    "packages": [
+      {
+        "id": "cache",
+        "name": "@workspace/cache",
+        "path": "packages/cache",
+        "dependencies": {
+          "@upstash/redis": "^1"
+        }
+      }
+    ],
+    "files": [
+      {
+        "from": "files/cache/package.json",
+        "to": {
+          "package": "cache",
+          "path": "package.json"
+        }
+      },
+      {
+        "from": "files/cache/tsconfig.json",
+        "to": {
+          "package": "cache",
+          "path": "tsconfig.json"
+        }
+      },
+      {
+        "from": "files/cache/src/client.ts",
+        "to": {
+          "package": "cache",
+          "path": "src/client.ts"
+        }
+      },
+      {
+        "from": "files/cache/src/cache.ts",
+        "to": {
+          "package": "cache",
+          "path": "src/cache.ts"
+        }
+      },
+      {
+        "from": "files/cache/src/index.ts",
+        "to": {
+          "package": "cache",
+          "path": "src/index.ts"
+        }
+      }
+    ],
+    "environment": [
+      {
+        "name": "UPSTASH_REDIS_REST_URL",
+        "required": true,
+        "secret": false
+      },
+      {
+        "name": "UPSTASH_REDIS_REST_TOKEN",
+        "required": true,
+        "secret": true
+      }
+    ],
+    "scripts": []
+  }
+}
