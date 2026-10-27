@@ -1,5 +1,5 @@
 {
-  "$schema": "https://deessejs.com/schemas/deesse-block.schema.json",
+  "$schema": "https://app.deessejs.com/schema/block/v1.json",
   "formatVersion": 1,
   "name": "upstash-redis",
   "version": "0.1.0",
@@ -16,16 +16,11 @@
       "package": "cache"
     }
   ],
-  "requires": [],
   "install": {
     "packages": [
       {
         "id": "cache",
-        "name": "@workspace/cache",
-        "path": "packages/cache",
-        "dependencies": {
-          "@upstash/redis": "^1"
-        }
+        "path": "packages/cache"
       }
     ],
     "files": [
@@ -77,6 +72,8 @@
         "secret": true
       }
     ],
-    "scripts": []
+    "manualSteps": [
+      "Set the required Upstash Redis environment variables in the consuming application."
+    ]
   }
 }

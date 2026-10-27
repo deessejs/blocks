@@ -25,4 +25,4 @@ This is an Upstash-specific integration. It does not claim to define a provider-
 
 ## Source
 
-The descriptor and file layout follow the proposed Deesse block format. The CLI installer and the descriptor schema are still under development.
+The descriptor follows the DeesseJS V1 copy-first block contract. The package manifest declares the package name and runtime dependencies that the CLI reports from the block assets.
