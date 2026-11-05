@@ -1,11 +1,14 @@
 {
-  "extends": "@workspace/typescript-config/base.json",
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
+    "target": "ES2024",
     "module": "ES2022",
     "moduleResolution": "Bundler",
-    "types": ["node"],
+    "strict": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
     "isolatedDeclarations": false
   },
   "include": ["src/**/*"],

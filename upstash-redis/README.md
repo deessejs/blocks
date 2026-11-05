@@ -25,4 +25,4 @@ This is an Upstash-specific integration. It does not claim to define a provider-
 
 ## Source
 
-The descriptor follows the DeesseJS V1 copy-first block contract. The package manifest declares the package name and runtime dependencies that the CLI reports from the block assets.
+The descriptor follows the DeesseJS V1 copy-first block contract. The package manifest declares the package name and runtime dependencies that the CLI reports from the block assets. Its TypeScript configuration is standalone and does not require a workspace TypeScript preset or pnpm catalog entry.
